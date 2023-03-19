@@ -1,91 +1,46 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Button, HeaderIllustration } from '@/components'
+import { Github, MessageCircle } from 'lucide-react'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <main>
+      <nav className="flex items-center justify-between py-4 px-8 max-w-7xl mx-auto border-b border-gray-300">
+        <div className="flex items-center justify-between">
+          <MessageCircle size={18} />
+          <span className="font-bold text-lg ml-2">ChatterBox</span>
+        </div>
+        <Button>
+          <Github size={18} />
+          <span className="ml-3">Continue with Github</span>
+        </Button>
+      </nav>
+      <section className="max-w-2xl mx-auto text-center my-14 space-y-6">
+        <h1 className="text-7xl font-bold leading-none">
+          Just a Next 13 experiment
+        </h1>
+        <p className="text-xl text-gray-700 tracking-wider">
+          This project is just for testing Next 13 new functionalities
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className="flex items-center justify-center gap-4">
+          <Button variant="outlined" size="lg">
+            Repository
+          </Button>
+          <Button size="lg">
+            <Github size={18} />
+            <span className="ml-3">Continue with Github</span>
+          </Button>
         </div>
-      </div>
+      </section>
+      <HeaderIllustration />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+      <footer className="flex items-center justify-between py-4 px-8 max-w-7xl mx-auto border-t border-gray-300">
+        <div className="flex items-center justify-between">
+          <MessageCircle size={16} />
+          <span className="text-gray-700 text-sm ml-2">
+            Built by @rafaelszago
+          </span>
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </footer>
     </main>
   )
 }
