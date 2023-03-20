@@ -1,5 +1,6 @@
 import { Button, HeaderIllustration } from '@/components'
 import { MessageCircle } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
           <Button variant="outlined" size="lg">
             Repository
           </Button>
-          <Button size="lg">Sign In</Button>
+          <Link href="/signin">
+            <Button size="lg">Sign In</Button>
+          </Link>
         </div>
       </section>
       <HeaderIllustration />
