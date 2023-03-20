@@ -11,6 +11,7 @@
     "transpile": "tsc"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^7.1.0",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "4.11.0",
     "@types/node": "18.15.3",
