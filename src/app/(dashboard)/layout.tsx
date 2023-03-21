@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     <div className="min-h-screen bg-gray-50">
       {/* @ts-ignore-error */}
       <Navbar />
-      <div className="max-w-4xl mx-auto py-8">{children}</div>
+      <div className="max-w-3xl mx-auto py-8 px-4 md:px-0">{children}</div>
     </div>
   )
 }
