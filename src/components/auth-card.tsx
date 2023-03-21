@@ -5,7 +5,7 @@ import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { signIn } from 'next-auth/react'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import { Button } from './ui'
+import { Button, Card } from './ui'
 
 type HandleSignInParams = {
   method: 'github' | 'google'
@@ -19,13 +19,13 @@ export function AuthCard() {
   const handleSignIn = async ({ method }: HandleSignInParams) => {
     setLoading(true)
 
-    const res = await signIn(method, { redirect: false })
+    await signIn(method, { redirect: false })
 
     setLoading(false)
   }
 
   return (
-    <div className="rounded-md shadow bg-white border border-gray-100 p-12">
+    <Card className="p-12">
       <h1 className="text-xl font-bold mb-1">Sign in to your account</h1>
       <p className="text-gray-500">Select your method to sign in</p>
       <div className="space-y-3 mt-6">
@@ -51,6 +51,6 @@ export function AuthCard() {
       <p className="text-red-500 text-sm mt-4 font-medium">
         {errorType && authErrors[errorType]}
       </p>
-    </div>
+    </Card>
   )
 }
