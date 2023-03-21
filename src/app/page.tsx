@@ -1,17 +1,12 @@
-import { Button, HeaderIllustration } from '@/components'
+import { Button, HeaderIllustration, Navbar } from '@/components'
 import { MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Home() {
   return (
     <main>
-      <nav className="flex items-center justify-between py-4 px-8 border-b border-gray-300">
-        <div className="flex items-center justify-between">
-          <MessageCircle size={18} />
-          <span className="font-bold text-lg ml-2">ChatterBox</span>
-        </div>
-        <Button>Sign In</Button>
-      </nav>
+      {/* @ts-ignore-error */}
+      <Navbar />
       <section className="max-w-2xl mx-auto text-center my-14 space-y-6">
         <h1 className="text-7xl font-bold leading-none">
           Just a Next 13 experiment
