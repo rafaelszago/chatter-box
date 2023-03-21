@@ -1,4 +1,5 @@
 import { Card } from '@/components'
+import { PostForm } from '@/components/post-form'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 
@@ -7,11 +8,14 @@ export default async function Dashboard() {
 
   return (
     <div className="">
-      <h1 className="text-xl font-bold">
-        Hi {session?.user.name}, whats happening?
-      </h1>
+      <Card>
+        <PostForm
+          name={session?.user.name ?? ''}
+          image={session?.user.image ?? ''}
+        />
+      </Card>
 
-      <div className="space-y-6 mt-6">
+      <div className="space-y-4 mt-6">
         <Card>Hello World!</Card>
         <Card>Hello World!</Card>
         <Card>Hello World!</Card>
