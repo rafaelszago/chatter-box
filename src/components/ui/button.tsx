@@ -7,9 +7,9 @@ const buttonStyles = cva(
     variants: {
       variant: {
         default:
-          'bg-black text-white hover:bg-gray-800 disabled:bg-gray-600 disabled:text-gray-800',
+          'bg-black text-white hover:bg-gray-800 disabled:bg-gray-700 disabled:text-gray-300',
         outlined:
-          'bg-transparent border border-gray-400 text-black hover:border-black'
+          'bg-transparent border border-gray-400 disabled:border-gray-300 disabled:text-gray-500 text-black hover:border-black'
       },
       size: {
         md: 'px-4 py-2 text-sm',
