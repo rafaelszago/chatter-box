@@ -9,10 +9,11 @@ export default function Home() {
       <Navbar />
       <section className="max-w-2xl mx-auto text-center my-14 space-y-6">
         <h1 className="text-7xl font-bold leading-none">
-          Just a Next 13 experiment
+          Express Yourself in Short Messages
         </h1>
         <p className="text-xl text-gray-700 tracking-wider">
-          This project is just for testing Next 13 new functionalities
+          Share short and sweet messages like Twitter! Stay connected with
+          friends and family while expressing yourself.
         </p>
         <div className="flex items-center justify-center gap-4">
           <Button variant="outlined" size="lg">

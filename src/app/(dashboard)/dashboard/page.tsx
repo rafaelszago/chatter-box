@@ -1,4 +1,4 @@
-import { Card } from '@/components'
+import { Card, PostList } from '@/components'
 import { PostForm } from '@/components/post-form'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
@@ -14,13 +14,8 @@ export default async function Dashboard() {
           image={session?.user.image ?? ''}
         />
       </Card>
-
-      <div className="space-y-4 mt-6">
-        <Card>Hello World!</Card>
-        <Card>Hello World!</Card>
-        <Card>Hello World!</Card>
-        <Card>Hello World!</Card>
-      </div>
+      {/* @ts-ignore-errors */}
+      <PostList />
     </div>
   )
 }
