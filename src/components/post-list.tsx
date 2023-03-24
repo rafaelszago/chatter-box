@@ -1,26 +1,12 @@
-import { db } from '@/lib/database'
-import { cache } from 'react'
+import { listPosts } from '@/lib/list-posts'
 import { PostItem } from './post-item'
 
-const getPosts = cache(async () => {
-  return await db.post.findMany({
-    include: {
-      user: {
-        select: {
-          id: true,
-          name: true,
-          image: true
-        }
-      }
-    },
-    orderBy: {
-      createdAt: 'desc'
-    }
-  })
-})
+type PostListProps = {
+  userId?: string
+}
 
-export async function PostList() {
-  const posts = await getPosts()
+export async function PostList({ userId }: PostListProps) {
+  const posts = await listPosts(userId)
 
   return (
     <div className="space-y-6 mt-6">
