@@ -1,5 +1,6 @@
-import { Card, PostList } from '@/components'
 import { PostForm } from '@/components/post-form'
+import { PostList } from '@/components/post-list'
+import { Card } from '@/components/ui'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 
