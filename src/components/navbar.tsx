@@ -10,7 +10,9 @@ export async function Navbar() {
   if (!session) {
     return (
       <nav className="flex items-center justify-between py-4 w-full px-8 border-b border-gray-300 bg-white">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <Link href="/signin">
           <Button>Sign In</Button>
         </Link>
@@ -20,7 +22,9 @@ export async function Navbar() {
 
   return (
     <nav className="flex items-center justify-between py-4 px-8 w-full border-b border-gray-300 bg-white">
-      <Logo />
+      <Link href="/dashboard">
+        <Logo />
+      </Link>
       <UserMenu
         user={{
           name: session.user.name ?? '',
