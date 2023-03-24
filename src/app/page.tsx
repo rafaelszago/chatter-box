@@ -1,4 +1,5 @@
-import { Button, HeaderIllustration, Navbar } from '@/components'
+import { Navbar } from '@/components/navbar'
+import { Button, HeaderIllustration } from '@/components/ui'
 import { MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 
@@ -7,7 +8,7 @@ export default function Home() {
     <main>
       {/* @ts-ignore-error */}
       <Navbar />
-      <section className="max-w-2xl mx-auto text-center my-14 space-y-6">
+      <section className="max-w-2xl mx-auto text-center my-10 space-y-6">
         <h1 className="text-7xl font-bold leading-none">
           Express Yourself in Short Messages
         </h1>
