@@ -3,6 +3,7 @@
 import { User } from '@prisma/client'
 import { ArrowLeft, Settings } from 'lucide-react'
 import { signOut } from 'next-auth/react'
+import Link from 'next/link'
 import { Avatar } from './ui/avatar'
 import {
   DropdownMenu,
@@ -29,9 +30,11 @@ export function UserMenu({ user }: UserMenuProps) {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>{user.name ?? ''}</DropdownMenuLabel>
-        <DropdownMenuItem>
-          <Settings size={12} /> Settings
-        </DropdownMenuItem>
+        <Link href="/settings">
+          <DropdownMenuItem>
+            <Settings size={12} /> Settings
+          </DropdownMenuItem>
+        </Link>
         <DropdownMenuItem onClick={() => signOut({ callbackUrl: '/signin' })}>
           <ArrowLeft size={12} /> Sign Out
         </DropdownMenuItem>

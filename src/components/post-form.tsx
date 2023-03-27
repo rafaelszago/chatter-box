@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
-import { Avatar, Button, textareaStyles } from './ui'
+import { Avatar, Button, inputStyles } from './ui'
 
 const postCreateSchema = z.object({
   content: z.string().min(1).max(255, { message: 'Max 255 characters' })
@@ -73,7 +73,7 @@ export function PostForm({ name, image }: PostFormProps) {
           <div className="relative flex">
             <input
               disabled={isSubmitting}
-              className={twMerge(textareaStyles(), 'block')}
+              className={twMerge(inputStyles(), 'block')}
               {...register('content')}
             />
             <div className="absolute inset-y-0 right-0 flex py-1.5 pr-2">
