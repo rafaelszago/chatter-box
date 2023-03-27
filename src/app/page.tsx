@@ -31,7 +31,14 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <MessageCircle size={16} />
           <span className="text-gray-700 text-sm ml-2">
-            Built by @rafaelszago
+            Built by{' '}
+            <Link
+              href="https://github.com/rafaelszago"
+              target="_blank"
+              rel="noopenner noreferer"
+            >
+              @rafaelszago
+            </Link>
           </span>
         </div>
       </footer>
