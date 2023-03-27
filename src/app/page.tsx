@@ -18,10 +18,10 @@ export default function Home() {
         </p>
         <div className="flex items-center justify-center gap-4">
           <Button variant="outlined" size="lg">
-            Repository
+            About
           </Button>
           <Link href="/signin">
-            <Button size="lg">Sign In</Button>
+            <Button size="lg">Start now</Button>
           </Link>
         </div>
       </section>
