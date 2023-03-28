@@ -66,7 +66,11 @@ export default function UserForm({ user }: UserFormProps) {
         </p>
       </div>
       <div>
-        <Button type="submit" disabled={isSubmitting || !isValid}>
+        <Button
+          type="submit"
+          disabled={isSubmitting || !isValid}
+          className="w-full md:w-fit"
+        >
           {isSubmitting && <Loader size={14} className="mr-3" />}
           Update
         </Button>
