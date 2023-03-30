@@ -1,6 +1,11 @@
 import { PostList } from '@/components/post-list'
 import { Avatar } from '@/components/ui'
 import { getUser } from '@/lib/get-user'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ChatterBox | Profile'
+}
 
 export default async function Profile({ params }: { params: { id: string } }) {
   const user = await getUser(params.id)

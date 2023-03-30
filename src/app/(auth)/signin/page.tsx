@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 export default function SignInPage() {
   return (
     <div className="mx-auto max-w-lg text-center">
-      <h1 className="text-3xl font-bold mb-12">Welcome to ChatterBox 👋</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12">
+        Welcome to ChatterBox 👋
+      </h1>
       <AuthCard />
       <div className="w-full inline-flex justify-center mt-6">
         <Link href="/">

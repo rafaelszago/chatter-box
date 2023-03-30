@@ -1,6 +1,7 @@
 import { Post } from '@prisma/client'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import Link from 'next/link'
 import { LikeButton } from './like-button'
 import { HoverCard } from './ui'
 import { Card } from './ui/card'
@@ -22,11 +23,13 @@ export function PostItem({ post }: PostItemProps) {
     <Card>
       <div className="flex justify-between">
         <div className="flex items-center gap-x-4">
-          <HoverCard
-            id={post.userId}
-            image={post.user.image ?? ''}
-            name={post.user.name ?? ''}
-          />
+          <Link href={`/profiles/${post.userId}`}>
+            <HoverCard
+              id={post.userId}
+              image={post.user.image ?? ''}
+              name={post.user.name ?? ''}
+            />
+          </Link>
           <div className="-mt-1">
             <p className="text-gray-700">{post.user.name}</p>
             <p className="text-xs text-gray-500">

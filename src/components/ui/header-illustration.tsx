@@ -4,7 +4,7 @@ export const HeaderIllustration = () => (
     height={475}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="mx-auto scale-75"
+    className="mx-auto scale-75 max-w-full"
   >
     <g clipPath="url(#a)">
       <path fill="#fff" d="M0 0h881v475H0z" />
