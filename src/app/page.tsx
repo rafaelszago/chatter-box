@@ -17,9 +17,11 @@ export default function Home() {
           friends and family while expressing yourself.
         </p>
         <div className="flex items-center justify-center gap-4">
-          <Button variant="outlined" size="lg">
-            About
-          </Button>
+          <Link href="/about">
+            <Button variant="outlined" size="lg">
+              About
+            </Button>
+          </Link>
           <Link href="/signin">
             <Button size="lg">Start now</Button>
           </Link>
