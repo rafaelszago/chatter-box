@@ -7,7 +7,20 @@ export const metadata: Metadata = {
   title: 'ChatterBox | Profile'
 }
 
-export default async function Profile({ params }: { params: { id: string } }) {
+type PageParams = {
+  params: {
+    id: string
+  }
+}
+
+export async function generateMetadata({
+  params
+}: PageParams): Promise<Metadata> {
+  const user = await getUser(params.id)
+  return { title: user?.name }
+}
+
+export default async function Profile({ params }: PageParams) {
   const user = await getUser(params.id)
 
   if (!user) {
