@@ -3,11 +3,20 @@ import { Avatar } from '@/components/ui'
 import { getUser } from '@/lib/get-user'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'ChatterBox | Profile'
+type PageParams = {
+  params: {
+    id: string
+  }
 }
 
-export default async function Profile({ params }: { params: { id: string } }) {
+export async function generateMetadata({
+  params
+}: PageParams): Promise<Metadata> {
+  const user = await getUser(params.id)
+  return { title: `ChatterBox | ${user?.name}` }
+}
+
+export default async function Profile({ params }: PageParams) {
   const user = await getUser(params.id)
 
   if (!user) {

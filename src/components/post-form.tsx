@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader, Send } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
@@ -20,7 +21,8 @@ type PostFormProps = {
 }
 
 export function PostForm({ name, image }: PostFormProps) {
-  const navigation = useRouter()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
   const {
     register,
     handleSubmit,
@@ -45,7 +47,9 @@ export function PostForm({ name, image }: PostFormProps) {
       content: ''
     })
 
-    navigation.refresh()
+    startTransition(() => {
+      router.refresh()
+    })
   }
 
   return (
@@ -80,7 +84,7 @@ export function PostForm({ name, image }: PostFormProps) {
               <Button
                 type="submit"
                 variant="outlined"
-                disabled={isSubmitting || !isValid}
+                disabled={isSubmitting || !isValid || isPending}
                 className="w-full mt-3 md:mt-0 md:w-fit"
               >
                 {isSubmitting ? <Loader size={14} /> : <Send size={14} />}

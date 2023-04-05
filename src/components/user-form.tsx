@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader } from 'lucide-react'
 import { User } from 'next-auth'
 import { useRouter } from 'next/navigation'
+import { useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
@@ -20,7 +21,8 @@ type UserFormProps = {
 }
 
 export default function UserForm({ user }: UserFormProps) {
-  const navigation = useRouter()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
   const {
     register,
     handleSubmit,
@@ -42,7 +44,9 @@ export default function UserForm({ user }: UserFormProps) {
       body: JSON.stringify(data)
     })
 
-    navigation.refresh()
+    startTransition(() => {
+      router.refresh()
+    })
   }
 
   return (
@@ -68,7 +72,7 @@ export default function UserForm({ user }: UserFormProps) {
       <div>
         <Button
           type="submit"
-          disabled={isSubmitting || !isValid}
+          disabled={isSubmitting || !isValid || isPending}
           className="w-full md:w-fit"
         >
           {isSubmitting && <Loader size={14} className="mr-3" />}
